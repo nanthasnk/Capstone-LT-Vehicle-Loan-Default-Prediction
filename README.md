@@ -43,10 +43,13 @@ Therefore higher the LTV higher are the chances of a person defaulting the loan.
 ## Statistical Data Analysis
 ### ANOVA for Numerical Columns
 - Since, our target variable is dichotomous and to find whether feature is significant or not, we did a oneway-anova test to find out the significance of the feature.
+
+![ANOVA](/Images/oneway_anova.PNG "ANOVA Test")
 - All our variables have rejected the null hypothesis and the hypothesis is in favor of alternate hypothesis which states that the mean of two groups are not equal which will help in splitting our target variable. 
 - This test does explain significance but not strength of the variable associated with the target variable.
 ### ChiSquare for Categorical Columns
 - The Chi-Square test of independence is used to determine if there is a significant relationship between two nominal (categorical) variables.
+![Chi Square](/Images/chisquare.PNG "Chi Square Test")
 - From the test, we can see Pan flag, Unique_id, mobileflag and Sec.Overdue.Accts have failed the test and so they are insignificant variables to the target variable.
 
 ## Evaluation Metric
@@ -61,7 +64,7 @@ Here we are trying Linear, distance and tree-based models in the conviction whic
 
 ## Final Model
 By comparing ROC and Accuracy score results of models and then we choose the best model as LightGBM, having the best evaluation scores.
-![LightGBM](/Images/lgbm.png "Score for LGBM")
+![LightGBM](/Images/Lgbm.PNG "Score for LGBM")
 
 ## Conclusion
 - In this project Vehicle loan defaulters in the first EMI for L&T have been determined. The best performing the models were ensemble-based models.
