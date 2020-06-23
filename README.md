@@ -21,7 +21,24 @@ Following Information regarding the loan and loanee are provided in the datasets
 - Bureau data & history (Bureau score, number of active accounts, the status of other loans, credit history etc.)
 
 ## EDA
-- Univariate, Bivariate and Multivariate Analysis were performed to bring out important aspects of data into focus for further analysis.
+Univariate, Bivariate and Multivariate Analysis were performed to bring out important aspects of data into focus for further analysis. Some of the highlights from EDA are listed below.
+
+![Loan Default](/Images/loan_default.png "Loan Default")
+![LTV](/Images/LTV_with_target.PNG "LTV")
+### Inference
+- The count of non defaulters is more than defaulters where 0 (78.29%) is a non defaulter and 1 (21.71%) is a defaulter in the Loan Default countplot.
+- From the distribution plot it is clear that as the LTV increases the persons probability of defaulting the loan also increases. 
+Therefore higher the LTV higher are the chances of a person defaulting the loan.
+
+
+![Bivariate](/Images/Bivariate_Analysis.png "Bivariate Analysis between Disbursed Amount and Asset Cost")
+
+### Inference 
+- As the disbursed amount increases the asset cost too increases and there are no defaulters as the disbursed amount increases. 
+
+![Bivariate_2](/Images/Bivariate_CNS.PNG "Bivariate Analysis between CNS Score and CNS Score Description")
+### Inference 
+- As the risk increases the score decreases. The person who has a higher score might tend to be a non defaulter while the person having a low score might be a defaulter.
 
 ## Statistical Data Analysis
 ### ANOVA for Numerical Columns
@@ -31,10 +48,6 @@ Following Information regarding the loan and loanee are provided in the datasets
 ### ChiSquare for Categorical Columns
 - The Chi-Square test of independence is used to determine if there is a significant relationship between two nominal (categorical) variables.
 - From the test, we can see Pan flag, Unique_id, mobileflag and Sec.Overdue.Accts have failed the test and so they are insignificant variables to the target variable.
-
-
-
-
 
 ## Evaluation Metric
 - ROC AUC-Score was chosen as the metric for the models.
@@ -48,7 +61,8 @@ Here we are trying Linear, distance and tree-based models in the conviction whic
 
 ## Final Model
 By comparing ROC and Accuracy score results of models and then we choose the best model as LightGBM, having the best evaluation scores.
-#img
+![LightGBM](/Images/lgbm.png "Score for LGBM")
+
 ## Conclusion
 - In this project Vehicle loan defaulters in the first EMI for L&T have been determined. The best performing the models were ensemble-based models.
 - The data seems to exactly mimic the real-life scenario which is very evident since there many zero values present which corresponds to first time customers.
