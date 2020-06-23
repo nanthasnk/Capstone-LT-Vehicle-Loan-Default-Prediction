@@ -1,13 +1,61 @@
-# Capstone-Vehice-Loan-Default-Prediction
+# Vehicle Loan Default Prediction
+This Capstone project was done as a part of my data science course. I like to thank my teammates Gokul Mahendran, Rishi Kumar Raman, Krishna Raj and Vivekandan for their valuable contributions during the course of this project.
 
-Financial institutions incur significant losses due to the default of vehicle loans. This has led to the tightening up of vehicle loan underwriting and increased vehicle loan rejection rates. The need for a better credit risk scoring model is also raised by these institutions. This warrants a study to estimate the determinants of vehicle loan default. A financial institution has hired you to accurately predict the probability of loanee/borrower defaulting on a vehicle loan in the first EMI (Equated Monthly Instalments) on the due date.
-<br>
+## Business Problem
+- Financial institutions incur significant losses due to the default of vehicle loans. This has led to the tightening up of vehicle loan underwriting and increased vehicle loan rejection rates. This warrants a study to estimate the determinants of vehicle loan default. The need for a better credit risk scoring model is also raised by these institutions. This warrants a study to estimate the determinants of vehicle loan default.
+- Loan takers of L&T have been studied over a period of time and their ability to pay installments were studied and analyzing this will help us to reduce loan rejection rates which helps us gain a customer base by providing the loans to correct persons.  
+
+## Project Overview
+- The objective of the problem is to accurately predict the probability of loanee/borrower defaulting on a vehicle loan in the first EMI (Equated Monthly Instalments) on the due date.
+- Performed EDA to understand the relation of target variable with the other features.
+- Statistical Analysis techniques like ANOVA for numerical and Chi-square for the categorical variables were performed to find the significance of the features with respect to the target.
+- Base Models were build in Logistic Regression, Random Forest, KNN and LightGBM with kfold cross validation.
+- Created new features like age at the time of disbursement, distbursement month, etc.
+The dataset represents Vehicle Loan Default of L&T financial institution. 
+
+## Dataset Description
+The dataset represents Vehicle Loan Default of L&T financial institution. There are 2,33,134 records and 42 columns
 Following Information regarding the loan and loanee are provided in the datasets:
-<br>
-Loanee Information (Demographic data like age, Identity proof etc.)
-<br>
-Loan Information (Disbursal details, loan to value ratio etc.)
-<br>
-Bureau data & history (Bureau score, number of active accounts, the status of other loans, credit history etc.)
-<br>
-Doing so will ensure that clients capable of repayment are not rejected and important determinants can be identified which can be further used for minimising the default rates.
+- Loanee Information (Demographic data like age, Identity proof etc.)
+- Loan Information (Disbursal details, loan to value ratio etc.)
+- Bureau data & history (Bureau score, number of active accounts, the status of other loans, credit history etc.)
+
+## EDA
+- Univariate, Bivariate and Multivariate Analysis were performed to bring out important aspects of data into focus for further analysis.
+
+## Statistical Data Analysis
+### ANOVA for Numerical Columns
+- Since, our target variable is dichotomous and to find whether feature is significant or not, we did a oneway-anova test to find out the significance of the feature.
+- All our variables have rejected the null hypothesis and the hypothesis is in favor of alternate hypothesis which states that the mean of two groups are not equal which will help in splitting our target variable. 
+- This test does explain significance but not strength of the variable associated with the target variable.
+### ChiSquare for Categorical Columns
+- The Chi-Square test of independence is used to determine if there is a significant relationship between two nominal (categorical) variables.
+- From the test, we can see Pan flag, Unique_id, mobileflag and Sec.Overdue.Accts have failed the test and so they are insignificant variables to the target variable.
+
+
+
+
+
+## Evaluation Metric
+- ROC AUC-Score was chosen as the metric for the models.
+
+## Base Models
+Here we are trying Linear, distance and tree-based models in the conviction which splits the target variables at its best. Since the metric of interest for the problem statement is AUC, from the below output we can conclude that tree based generally outperforms linear based models hence we would be using tree-based model for our further analysis.
+- **Logistic Regression ROC AUC SCORE:** 0.55
+- **KNN ROC AUC SCORE:** 0.52
+- **Random Forest ROC AUC SCORE:** 0.60
+- **KNN Classifier ROC AUC SCORE:** 0.55
+
+## Final Model
+By comparing ROC and Accuracy score results of models and then we choose the best model as LightGBM, having the best evaluation scores.
+#img
+## Conclusion
+- In this project Vehicle loan defaulters in the first EMI for L&T have been determined. The best performing the models were ensemble-based models.
+- The data seems to exactly mimic the real-life scenario which is very evident since there many zero values present which corresponds to first time customers.
+-	As the scope of Feature engineering was low, we tried out multiplying numerical columns, frequency encoding of categorical columns and binning of numerical columns.
+
+## References
+1. Kaggle: https://www.kaggle.com/c/forest-covertype-prediction/forums/t/10693/features-engineering-benchmark 
+2. https://www.chicagofed.org/~/media/publications/economic-perspectives/2008/ep-3qtr2008-part2-agarwal-etal-pdf.pdf 
+3. https://www.paisabazaar.com/car-loan/6-factors-that-affect-car-loan-interest-rates/
+
