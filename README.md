@@ -3,14 +3,14 @@ This Capstone project was done as a part of my data science course. I like to th
 
 ## Business Problem
 - Financial institutions incur significant losses due to the default of vehicle loans. This has led to the tightening up of vehicle loan underwriting and increased vehicle loan rejection rates. This warrants a study to estimate the determinants of vehicle loan default. The need for a better credit risk scoring model is also raised by these institutions. This warrants a study to estimate the determinants of vehicle loan default.
-- Loan takers of L&T have been studied over a period of time and their ability to pay installments were studied and analyzing this will help us to reduce loan rejection rates which helps us gain a customer base by providing the loans to correct persons.  
+- Analyzing this will help the financial institutions to minimize the loan default rates, which helps us gain a customer base by providing the loans to correct persons.  
 
 ## Project Overview
 - The objective of the problem is to accurately predict the probability of loanee/borrower defaulting on a vehicle loan in the first EMI (Equated Monthly Instalments) on the due date.
 - Performed EDA to understand the relation of target variable with the other features.
 - Statistical Analysis techniques like ANOVA for numerical and Chi-square for the categorical variables were performed to find the significance of the features with respect to the target.
-- Base Models were build in Logistic Regression, Random Forest, KNN and LightGBM with kfold cross validation.
-- Created new features like age at the time of disbursement, distbursement month, etc.
+- Base Models were built in Logistic Regression, Random Forest, KNN and LightGBM with Kfold cross-validation.
+- Created new features like age at the time of disbursement, disbursement month, etc.
 The dataset represents Vehicle Loan Default of L&T financial institution. 
 
 ## Dataset Description
@@ -23,11 +23,11 @@ Following Information regarding the loan and loanee are provided in the datasets
 ## EDA
 Univariate, Bivariate and Multivariate Analysis were performed to bring out important aspects of data into focus for further analysis. Some of the highlights from EDA are listed below.
 
-![Loan Default](/Images/loan_default.png "Loan Default")
+![Loan Default](/Images/loan_default1.PNG "Loan Default")
 ![LTV](/Images/LTV_with_target.PNG "LTV")
 ### Inference
 - The count of non defaulters is more than defaulters where 0 (78.29%) is a non defaulter and 1 (21.71%) is a defaulter in the Loan Default countplot.
-- From the distribution plot it is clear that as the LTV increases the persons probability of defaulting the loan also increases. 
+- From the distribution plot, it is clear that as the LTV increases the persons probability of defaulting the loan also increases. 
 Therefore higher the LTV higher are the chances of a person defaulting the loan.
 
 
@@ -42,7 +42,7 @@ Therefore higher the LTV higher are the chances of a person defaulting the loan.
 
 ## Statistical Data Analysis
 ### ANOVA for Numerical Columns
-- Since, our target variable is dichotomous and to find whether feature is significant or not, we did a oneway-anova test to find out the significance of the feature.
+- Since our target variable is dichotomous and to find whether the feature is significant or not, we did a oneway-anova test to find out the significance of the feature.
 
 ![ANOVA](/Images/oneway_anova.PNG "ANOVA Test")
 - All our variables have rejected the null hypothesis and the hypothesis is in favor of alternate hypothesis which states that the mean of two groups are not equal which will help in splitting our target variable. 
@@ -64,15 +64,14 @@ Here we are trying Linear, distance and tree-based models in the conviction whic
 
 ## Final Model
 By comparing ROC and Accuracy score results of models and then we choose the best model as LightGBM, having the best evaluation scores.
+
 ![LightGBM](/Images/Lgbm.PNG "Score for LGBM")
 
 ## Conclusion
-- In this project Vehicle loan defaulters in the first EMI for L&T have been determined. The best performing the models were ensemble-based models.
-- The data seems to exactly mimic the real-life scenario which is very evident since there many zero values present which corresponds to first time customers.
--	As the scope of Feature engineering was low, we tried out multiplying numerical columns, frequency encoding of categorical columns and binning of numerical columns.
+- In this project Vehicle loan defaulters in the first EMI for L&T have been determined. The best performing models were ensemble-based models.
+- The data seems to exactly mimic the real-life scenario which is very evident since there many zero values present which corresponds to first-time customers.
 
 ## References
-1. Kaggle: https://www.kaggle.com/c/forest-covertype-prediction/forums/t/10693/features-engineering-benchmark 
-2. https://www.chicagofed.org/~/media/publications/economic-perspectives/2008/ep-3qtr2008-part2-agarwal-etal-pdf.pdf 
-3. https://www.paisabazaar.com/car-loan/6-factors-that-affect-car-loan-interest-rates/
+1. https://www.chicagofed.org/~/media/publications/economic-perspectives/2008/ep-3qtr2008-part2-agarwal-etal-pdf.pdf 
+2. https://www.paisabazaar.com/car-loan/6-factors-that-affect-car-loan-interest-rates/
 
