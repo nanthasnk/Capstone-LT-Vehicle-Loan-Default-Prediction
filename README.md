@@ -1,5 +1,5 @@
 # Vehicle Loan Default Prediction
-This Capstone project was done as a part of my data science course. I like to thank my teammates Gokul Mahendran, Rishi Kumar Raman, Krishna Raj and Vivekandan for their valuable contributions during the course of this project.
+This Capstone project was done as a part of my data science course.
 
 ## Business Problem
 - Financial institutions incur significant losses due to the default of vehicle loans. This has led to the tightening up of vehicle loan underwriting and increased vehicle loan rejection rates. This warrants a study to estimate the determinants of vehicle loan default. The need for a better credit risk scoring model is also raised by these institutions. This warrants a study to estimate the determinants of vehicle loan default.
