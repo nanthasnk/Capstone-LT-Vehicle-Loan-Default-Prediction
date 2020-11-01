@@ -2,7 +2,7 @@
 This Capstone project was done as a part of my data science course.
 
 ## Business Problem
-- Financial institutions incur significant losses due to the default of vehicle loans. This has led to the tightening up of vehicle loan underwriting and increased vehicle loan rejection rates. This warrants a study to estimate the determinants of vehicle loan default. The need for a better credit risk scoring model is also raised by these institutions. This warrants a study to estimate the determinants of vehicle loan default.
+- Financial institutions incur significant losses due to the default of vehicle loans. This has led to the tightening up of vehicle loan underwriting and increased vehicle loan rejection rates. This warrants a study to estimate the determinants of vehicle loan default. The need for a better credit risk scoring model is also raised by these institutions.
 - Analyzing this will help the financial institutions to minimize the loan default rates, which helps us gain a customer base by providing the loans to correct persons.  
 
 ## Project Overview
@@ -46,7 +46,7 @@ Therefore higher the LTV higher are the chances of a person defaulting the loan.
 
 ![ANOVA](/Images/oneway_anova.PNG "ANOVA Test")
 - All our variables have rejected the null hypothesis and the hypothesis is in favor of alternate hypothesis which states that the mean of two groups are not equal which will help in splitting our target variable. 
-- This test does explain significance but not strength of the variable associated with the target variable.
+
 ### ChiSquare for Categorical Columns
 - The Chi-Square test of independence is used to determine if there is a significant relationship between two nominal (categorical) variables.
 ![Chi Square](/Images/chisquare.PNG "Chi Square Test")
@@ -55,17 +55,17 @@ Therefore higher the LTV higher are the chances of a person defaulting the loan.
 ## Evaluation Metric
 - ROC AUC-Score was chosen as the metric for the models.
 
-## Base Models
+## Models
 Here we are trying Linear, distance and tree-based models in the conviction which splits the target variables at its best. Since the metric of interest for the problem statement is AUC, from the below output we can conclude that tree based generally outperforms linear based models hence we would be using tree-based model for our further analysis.
 - **Logistic Regression ROC AUC SCORE:** 0.55
 - **KNN ROC AUC SCORE:** 0.52
 - **Random Forest ROC AUC SCORE:** 0.60
 - **KNN Classifier ROC AUC SCORE:** 0.55
 
-## Final Model
+<!-- ## Final Model
 By comparing ROC and Accuracy score results of models and then we choose the best model as LightGBM, having the best evaluation scores.
 
-![LightGBM](/Images/Lgbm.PNG "Score for LGBM")
+![LightGBM](/Images/Lgbm.PNG "Score for LGBM") -->
 
 ## Conclusion
 - In this project Vehicle loan defaulters in the first EMI for L&T have been determined. The best performing models were ensemble-based models.
